@@ -162,8 +162,8 @@ public class Ejercicio1 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTotalActionPerformed
 
     private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
-    String cantidad, res1, res2, res3;
-    double p1, p2, p3, res=0, op1=0, op2=0, op3=0;
+    String cantidad, resultado1, resultado2, resultado3;
+    double p1, p2, p3, resultado=0, ope1=0, ope2=0, ope3=0;
     
     if (txtPersonaUno.getText().trim().isEmpty()){
     JOptionPane.showMessageDialog(this, "Digite Valor De La Persona Uno", "Error", JOptionPane.ERROR_MESSAGE);
@@ -182,33 +182,33 @@ public class Ejercicio1 extends javax.swing.JFrame {
     p3= Double.parseDouble(txtPersonaTres.getText());
     
     if(p2 == p1){ 
-    JOptionPane.showMessageDialog(this, "No digite Cero", "Error", JOptionPane.ERROR_MESSAGE);
+    JOptionPane.showMessageDialog(this, "Digite Un Valor Diferente en la casilla", "Error", JOptionPane.ERROR_MESSAGE);
     txtPersonaUno.requestFocusInWindow();
     }
     else if(p3 == p2){
-    JOptionPane.showMessageDialog(this,"No Digite Cero", "Error", JOptionPane.ERROR_MESSAGE);
+    JOptionPane.showMessageDialog(this,"Digite un valor diferente en la casilla", "Error", JOptionPane.ERROR_MESSAGE);
     txtPersonaDos.requestFocusInWindow();
     }
     else if(p3 == p1){
-    JOptionPane.showMessageDialog(this, "No digite Cero", "Error", JOptionPane.ERROR_MESSAGE);
+    JOptionPane.showMessageDialog(this, "digite un valor diferente en la casilla", "Error", JOptionPane.ERROR_MESSAGE);
     txtPersonaTres.requestFocusInWindow();
     }
     else {
-    
+     
     }
-    res= p1+p2+p3;
-    op1= (p1*100)/res;
-    op2= (p2*100)/res;
-    op3= (p3*100)/res;
+    resultado= p1+p2+p3;
+    ope1= (p1*100)/resultado;
+    ope2= (p2*100)/resultado;
+    ope3= (p3*100)/resultado;
     }
-    cantidad= String.valueOf(res);
+    cantidad= String.valueOf(resultado);
     txtTotal.setText(cantidad);
-    res1= String.valueOf(op1+"%");
-    txtPorPersonaUno.setText(res1);
-    res2= String.valueOf(op2+"%");
-    txtPorPersonaDos.setText(res2);
-    res3= String.valueOf(op3+"%");
-    txtPorPersonaTres.setText(res3);
+    resultado1= String.valueOf(ope1);
+    txtPorPersonaUno.setText(resultado1);
+    resultado2= String.valueOf(ope2);
+    txtPorPersonaDos.setText(resultado2);
+    resultado3= String.valueOf(ope3);
+    txtPorPersonaTres.setText(resultado3);
     
     }//GEN-LAST:event_cmdCalcularActionPerformed
 
