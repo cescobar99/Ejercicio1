@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -32,21 +35,18 @@ public class Ejercicio1 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txtPersonaUno = new javax.swing.JTextField();
+        txtPersonaDos = new javax.swing.JTextField();
+        txtPersonaTres = new javax.swing.JTextField();
+        txtTotal = new javax.swing.JTextField();
+        cmdCalcular = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        txtPorPersonaUno = new javax.swing.JTextField();
+        txtPorPersonaDos = new javax.swing.JTextField();
+        txtPorPersonaTres = new javax.swing.JTextField();
+        cmdBorrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,7 +55,7 @@ public class Ejercicio1 extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Andalus", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jLabel1.setText("Negocio Entre 3 Personas");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 11, 210, 30));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 11, 210, 30));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 255, 51));
@@ -75,72 +75,181 @@ public class Ejercicio1 extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 255, 51));
         jLabel5.setText("Dinero Invercion Total");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 184, -1, 30));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 300, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 300, -1));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 300, -1));
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 330, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, 30));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(51, 0, 204));
-        jButton1.setText("Calcular Inversion Total");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 470, 30));
+        txtPersonaUno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPersonaUnoKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtPersonaUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 300, -1));
+
+        txtPersonaDos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPersonaDosKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtPersonaDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 300, -1));
+
+        txtPersonaTres.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPersonaTresKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtPersonaTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 300, -1));
+
+        txtTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTotalActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 310, -1));
+
+        cmdCalcular.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cmdCalcular.setForeground(new java.awt.Color(51, 51, 51));
+        cmdCalcular.setText("CALCULAR");
+        cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCalcularActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 210, 30));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 255, 0));
         jLabel6.setText("Porcentaje Persona 1");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 150, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 150, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 255, 0));
         jLabel7.setText("Porcentaje Persona 2");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(51, 255, 51));
         jLabel8.setText("Porcentaje Persona 3");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 120, -1));
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 120, -1));
-        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 120, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, -1, -1));
+        jPanel1.add(txtPorPersonaUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 120, -1));
+        jPanel1.add(txtPorPersonaDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, 120, -1));
+        jPanel1.add(txtPorPersonaTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, 120, -1));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(51, 0, 255));
-        jButton2.setText("Calcular Porcentaje Invertido Persona 1");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 290, 280, -1));
-
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(51, 51, 255));
-        jButton3.setText("Calcular Porcentaje Invertido Persona 2");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 330, 280, -1));
-
-        jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(51, 0, 255));
-        jButton4.setText("Calcular Porcentaje Invertido Persona 3");
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(328, 370, -1, -1));
-
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(0, 51, 51));
-        jButton5.setText("BORRAR");
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 560, 30));
+        cmdBorrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cmdBorrar.setForeground(new java.awt.Color(0, 51, 51));
+        cmdBorrar.setText("BORRAR");
+        cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdBorrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, 160, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 569, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTotalActionPerformed
+
+    private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
+    String cantidad, res1, res2, res3;
+    double p1, p2, p3, res=0, op1=0, op2=0, op3=0;
+    
+    if (txtPersonaUno.getText().trim().isEmpty()){
+    JOptionPane.showMessageDialog(this, "Digite Valor De La Persona Uno", "Error", JOptionPane.ERROR_MESSAGE);
+    txtPersonaUno.requestFocusInWindow();
+    }
+    else if (txtPersonaDos.getText().trim().isEmpty()){
+    JOptionPane.showMessageDialog(this, "Digite Valor De La Persona Dos", "Error", JOptionPane.ERROR_MESSAGE);
+    txtPersonaDos.requestFocusInWindow();
+    }
+    else if (txtPersonaTres.getText().trim().isEmpty()){
+    JOptionPane.showMessageDialog(this, "Digite Valor De La Persona Tres");
+    }
+    else {
+    p1= Double.parseDouble(txtPersonaUno.getText());
+    p2= Double.parseDouble(txtPersonaDos.getText());
+    p3= Double.parseDouble(txtPersonaTres.getText());
+    
+    if(p2 == p1){ 
+    JOptionPane.showMessageDialog(this, "No digite Cero", "Error", JOptionPane.ERROR_MESSAGE);
+    txtPersonaUno.requestFocusInWindow();
+    }
+    else if(p3 == p2){
+    JOptionPane.showMessageDialog(this,"No Digite Cero", "Error", JOptionPane.ERROR_MESSAGE);
+    txtPersonaDos.requestFocusInWindow();
+    }
+    else if(p3 == p1){
+    JOptionPane.showMessageDialog(this, "No digite Cero", "Error", JOptionPane.ERROR_MESSAGE);
+    txtPersonaTres.requestFocusInWindow();
+    }
+    else {
+    
+    }
+    res= p1+p2+p3;
+    op1= (p1*100)/res;
+    op2= (p2*100)/res;
+    op3= (p3*100)/res;
+    }
+    cantidad= String.valueOf(res);
+    txtTotal.setText(cantidad);
+    res1= String.valueOf(op1+"%");
+    txtPorPersonaUno.setText(res1);
+    res2= String.valueOf(op2+"%");
+    txtPorPersonaDos.setText(res2);
+    res3= String.valueOf(op3+"%");
+    txtPorPersonaTres.setText(res3);
+    
+    }//GEN-LAST:event_cmdCalcularActionPerformed
+
+    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
+    txtPersonaUno.setText("");
+    txtPersonaDos.setText("");
+    txtPersonaTres.setText("");
+    txtTotal.setText("");
+    txtPorPersonaUno.setText("");
+    txtPorPersonaDos.setText("");
+    txtPorPersonaTres.setText("");
+    
+    txtPersonaUno.requestFocusInWindow();
+    }//GEN-LAST:event_cmdBorrarActionPerformed
+
+    private void txtPersonaUnoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPersonaUnoKeyTyped
+    char c=evt.getKeyChar();
+    
+    if(!Character.isDigit(c)){
+    getToolkit().beep();
+    evt.consume();
+    }
+    }//GEN-LAST:event_txtPersonaUnoKeyTyped
+
+    private void txtPersonaDosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPersonaDosKeyTyped
+    char c=evt.getKeyChar();
+    
+    if(!Character.isDigit(c)){
+    getToolkit().beep();
+    evt.consume();
+    }
+    }//GEN-LAST:event_txtPersonaDosKeyTyped
+
+    private void txtPersonaTresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPersonaTresKeyTyped
+    char c=evt.getKeyChar();
+    
+    if(!Character.isDigit(c)){
+    getToolkit().beep();
+    evt.consume();
+    }
+    }//GEN-LAST:event_txtPersonaTresKeyTyped
 
     /**
      * @param args the command line arguments
@@ -178,11 +287,8 @@ public class Ejercicio1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton cmdBorrar;
+    private javax.swing.JButton cmdCalcular;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -192,12 +298,12 @@ public class Ejercicio1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField txtPersonaDos;
+    private javax.swing.JTextField txtPersonaTres;
+    private javax.swing.JTextField txtPersonaUno;
+    private javax.swing.JTextField txtPorPersonaDos;
+    private javax.swing.JTextField txtPorPersonaTres;
+    private javax.swing.JTextField txtPorPersonaUno;
+    private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
 }
