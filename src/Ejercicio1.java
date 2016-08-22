@@ -98,6 +98,7 @@ public class Ejercicio1 extends javax.swing.JFrame {
         });
         jPanel1.add(txtPersonaTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 300, -1));
 
+        txtTotal.setEditable(false);
         txtTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTotalActionPerformed(evt);
@@ -129,8 +130,14 @@ public class Ejercicio1 extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(51, 255, 51));
         jLabel8.setText("Porcentaje Persona 3");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, -1, -1));
+
+        txtPorPersonaUno.setEditable(false);
         jPanel1.add(txtPorPersonaUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 120, -1));
+
+        txtPorPersonaDos.setEditable(false);
         jPanel1.add(txtPorPersonaDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, 120, -1));
+
+        txtPorPersonaTres.setEditable(false);
         jPanel1.add(txtPorPersonaTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, 120, -1));
 
         cmdBorrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
