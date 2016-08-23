@@ -203,10 +203,13 @@ public class Ejercicio1 extends javax.swing.JFrame {
     else {
      
     }
-    resultado= p1+p2+p3;
-    ope1= (p1*100)/resultado;
-    ope2= (p2*100)/resultado;
-    ope3= (p3*100)/resultado;
+    ope1=Double.parseDouble(txtPersonaUno.getText());
+    ope2=Double.parseDouble(txtPersonaDos.getText());
+    ope3=Double.parseDouble(txtPersonaTres.getText());
+    resultado= ope1+ope2+ope3;
+    ope1= (ope1*100)/resultado;
+    ope2= (ope2*100)/resultado;
+    ope3= (ope3*100)/resultado;
     }
     cantidad= String.valueOf(resultado);
     txtTotal.setText(cantidad);
