@@ -201,15 +201,15 @@ public class Ejercicio1 extends javax.swing.JFrame {
     txtPersonaTres.requestFocusInWindow();
     }
     else {
-     
-    }
-    ope1=Double.parseDouble(txtPersonaUno.getText());
+      ope1=Double.parseDouble(txtPersonaUno.getText());
     ope2=Double.parseDouble(txtPersonaDos.getText());
     ope3=Double.parseDouble(txtPersonaTres.getText());
     resultado= ope1+ope2+ope3;
     ope1= (ope1*100)/resultado;
     ope2= (ope2*100)/resultado;
     ope3= (ope3*100)/resultado;
+    }
+   
     }
     cantidad= String.valueOf(resultado);
     txtTotal.setText(cantidad);
